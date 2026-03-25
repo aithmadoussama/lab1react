@@ -139,6 +139,10 @@ root.render(<App />);
 
 ---
 
+## Captures 
+<img width="1060" height="378" alt="Capture d’écran du 2026-03-25 22-02-00" src="https://github.com/user-attachments/assets/38509d10-376c-4ac4-817e-c1b45d3666ff" />
+
+
 ## Objectifs du TP
 
 - Comprendre la structure d’un projet React  

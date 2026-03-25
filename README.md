@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+# TP 1 : Création d'une application React simple (Composants et Props)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Ce projet est un TP d'introduction à React. Il permet de découvrir les bases du framework à travers des composants simples.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Structure du projet
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+tp1/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   ├── robots.txt
+│   └── user.jpg
+│
+├── src/
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   ├── index.css
+│   ├── Greeting.js
+│   ├── HelloWorld.js
+│   ├── Profil.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Installation et lancement
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Installer les dépendances :
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Lancer l'application :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+##  Composants du projet
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔹 HelloWorld
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Composant simple qui affiche un message.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```javascript
+function HelloWorld() {
+  return <h1>Hello World</h1>;
+}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default HelloWorld;
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🔹 Greeting
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Composant utilisant les props pour afficher un nom.
 
-### Code Splitting
+```javascript
+function Greeting(props) {
+  return <h2>Bonjour {props.name} !</h2>;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default Greeting;
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 🔹 Profil
 
-### Making a Progressive Web App
+Composant affichant un profil utilisateur avec une image.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```javascript
+function Profil() {
+  return (
+    <div>
+      <h2>Mon Profil</h2>
+      <img src="/user.jpg" alt="user" width="150" />
+    </div>
+  );
+}
 
-### Advanced Configuration
+export default Profil;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+### 🔹 App.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Composant principal qui regroupe tous les composants.
 
-### `npm run build` fails to minify
+```javascript
+import './App.css';
+import HelloWorld from './HelloWorld';
+import Greeting from './Greeting';
+import Profil from './Profil';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+function App() {
+  return (
+    <div className="App">
+      <HelloWorld />
+      <Greeting name="Oussama" />
+      <Profil />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+### 🔹 index.js
+
+Point d'entrée de l'application React.
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+
+---
+
+## Objectifs du TP
+
+- Comprendre la structure d’un projet React  
+- Créer et utiliser des composants  
+- Utiliser les props pour passer des données  
+- Organiser un projet React  
+
+---
+
+## Technologies utilisées
+
+- React  
+- JavaScript (ES6)  
+- HTML  
+- CSS  
+
+---
+
+## 📌 Conclusion
+
+Ce TP constitue une première approche de React en manipulant des composants simples et en structurant une application.
+
+---
